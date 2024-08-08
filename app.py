@@ -74,7 +74,7 @@ def main():
         elif not auto:
             app_manager.gists_clone_master.clone_gist(gists=gists)
             app_manager.repo_clone_master.clone_repo(repos=repos)
-    archive = ArchiveTolls(f'{os.getenv('PATH')}')
+    archive = ArchiveTolls()
     archive.archive()
     app_manager.smart_printer.show_footer(url=app_manager.config.url, copyright_=app_manager.config.copyright_)
 

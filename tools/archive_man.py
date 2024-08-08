@@ -9,7 +9,7 @@ import zipfile
 
 
 class ArchiveTolls:
-    def __init__(self, path):
+    def __init__(self, path=os.path.join(os.path.expanduser('~'), 'github')):
         self.path = path
 
     def archive(self):
@@ -23,7 +23,3 @@ class ArchiveTolls:
         elif os.path.isfile(self.path):
             with zipfile.ZipFile('archive.zip', 'w') as zipf:
                 zipf.write(self.path, arcname='archive.zip')
-
-
-archive = ArchiveTolls('/home/saneks/github')
-archive.archive()
