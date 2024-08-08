@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 
 from tools.app_manager import AppManager
 from tools.github_api_man import GitHubAPI
+from tools.archive_man import ArchiveTolls
 
 
 def main():
@@ -73,7 +74,8 @@ def main():
         elif not auto:
             app_manager.gists_clone_master.clone_gist(gists=gists)
             app_manager.repo_clone_master.clone_repo(repos=repos)
-
+    archive = ArchiveTolls(f'{os.getenv('PATH')}')
+    archive.archive()
     app_manager.smart_printer.show_footer(url=app_manager.config.url, copyright_=app_manager.config.copyright_)
 
 

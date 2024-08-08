@@ -19,7 +19,7 @@ class GistsCloneMaster:
             gists = []
 
         home_directory = os.path.expanduser('~')
-        clone_path = os.path.join(home_directory, 'github_gists')
+        clone_path = os.path.join(home_directory, 'github/github_gists')
         num_of_gist = len(gists)
         for n, repo in enumerate(gists, 1):
             gists_name = repo['id']

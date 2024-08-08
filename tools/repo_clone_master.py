@@ -18,7 +18,7 @@ class RepoCloneMaster:
             repos = []
 
         home_directory = os.path.expanduser('~')
-        clone_path = os.path.join(home_directory, 'github_repositories')
+        clone_path = os.path.join(home_directory, 'github/github_repositories')
         num_of_repo = len(repos)
         for n, repo in enumerate(repos, 1):
             repo_name = repo['name']
